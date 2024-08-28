@@ -215,3 +215,179 @@ test.describe('Project links', () => {
   });
 });
 
+test.describe('Images should be Visible', () => {
+
+  // Test Case First Profile Image
+  test('Check First Profile Photo', async ({ page }) => {
+    await page.goto('https://mrjohn5on.github.io/');
+    const image = page.locator('img[alt="avatar"]');
+    await expect(image).toBeVisible();
+  });
+
+  //Test Case 2nd Profile Image
+  test('Check Second Profile Photo', async ({ page }) => {
+    await page.goto('https://mrjohn5on.github.io/');
+    const image = page.locator('img[alt="My Photo"]');
+    await expect(image).toBeVisible();
+  });
+
+});
+
+test.describe('Product One Page Functions', () => {
+
+  //Test Case for Header Github button link functionality
+test('Github link on header should lead to github repo', async ({ page, context }) => {
+  await page.goto('https://mrjohn5on.github.io/project1.html');
+  const githubButton1 = page.locator('a[href="https://github.com/MRJOHN5ON/postmanAPI_testing"]').first();
+
+
+  // Verify that the link is visible
+  await expect(githubButton1).toBeVisible();
+
+  // Click the link and wait for a new page to open in a new tab
+  const [newPage] = await Promise.all([
+    context.waitForEvent('page'),
+    githubButton1.click()
+  ]);
+
+  // Wait for the new page to load and check that the URL is correct
+  await newPage.waitForLoadState();
+  await expect(newPage).toHaveURL('https://github.com/MRJOHN5ON/postmanAPI_testing');
+
+  // Close the new tab
+  await newPage.close();
+});
+
+//Test Case for Header Github button link functionality
+test('Github link on footer should lead to github repo', async ({ page, context }) => {
+  await page.goto('https://mrjohn5on.github.io/project1.html');
+  const githubButton1 = page.locator('a[href="https://github.com/MRJOHN5ON/postmanAPI_testing"]').last();
+
+
+  // Verify that the link is visible
+  await expect(githubButton1).toBeVisible();
+
+  // Click the link and wait for a new page to open in a new tab
+  const [newPage] = await Promise.all([
+    context.waitForEvent('page'),
+    githubButton1.click()
+  ]);
+
+  // Wait for the new page to load and check that the URL is correct
+  await newPage.waitForLoadState();
+  await expect(newPage).toHaveURL('https://github.com/MRJOHN5ON/postmanAPI_testing');
+
+  // Close the new tab
+  await newPage.close();
+});
+
+test('Adding products to kit photo should enlarge into new tab upon click', async ({ page, context }) => {
+  // Go to the project page
+  await page.goto('https://mrjohn5on.github.io/project1.html');
+
+  // Click on the image to open the enlarged photo
+  const [newTab] = await Promise.all([
+    context.waitForEvent('page'), // Wait for a new tab to open
+    page.locator('img[alt="Adding Products to a Kit"]').click(), // Click the image
+  ]);
+
+  // Wait for the new tab to load and check its URL
+  await newTab.waitForLoadState();
+  await expect(newTab).toHaveURL('https://mrjohn5on.github.io/assets/images/p1.png');
+
+  // Close the new tab
+  await newTab.close();
+});
+
+test('Exceeding 30 items photo should enlarge into new tab upon click', async ({ page, context }) => {
+  // Go to the project page
+  await page.goto('https://mrjohn5on.github.io/project1.html');
+
+  // Click on the image to open the enlarged photo
+  const [newTab] = await Promise.all([
+    context.waitForEvent('page'), // Wait for a new tab to open
+    page.locator('img[alt="Exceeding 30 Items"]').click(), // Click the image
+  ]);
+
+  // Wait for the new tab to load and check its URL
+  await newTab.waitForLoadState();
+  await expect(newTab).toHaveURL('https://mrjohn5on.github.io/assets/images/p2.png');
+
+  // Close the new tab
+  await newTab.close();
+});
+
+test('Bug report 1 photo should enlarge into new tab upon click', async ({ page, context }) => {
+  // Go to the project page
+  await page.goto('https://mrjohn5on.github.io/project1.html');
+
+  // Click on the specific image (e.g., the first one)
+  const [newTab] = await Promise.all([
+    context.waitForEvent('page'), // Wait for a new tab to open
+    page.locator('img[alt="Bug Report in JIRA"]').first().click(), // Click the first image
+  ]);
+
+  // Wait for the new tab to load and check its URL
+  await newTab.waitForLoadState();
+  await expect(newTab).toHaveURL('https://mrjohn5on.github.io/assets/images/p3.png');
+
+  // Close the new tab
+  await newTab.close();
+});
+
+
+test('Non-existent Product IDs photo should enlarge into new tab upon click', async ({ page, context }) => {
+  // Go to the project page
+  await page.goto('https://mrjohn5on.github.io/project1.html');
+
+  // Click on the image to open the enlarged photo
+  const [newTab] = await Promise.all([
+    context.waitForEvent('page'), // Wait for a new tab to open
+    page.locator('img[alt="Non-existent Product IDs"]').click(), // Click the image
+  ]);
+
+  // Wait for the new tab to load and check its URL
+  await newTab.waitForLoadState();
+  await expect(newTab).toHaveURL('https://mrjohn5on.github.io/assets/images/p4.png');
+
+  // Close the new tab
+  await newTab.close();
+});
+
+test('Bug report 2 photo should enlarge into new tab upon click', async ({ page, context }) => {
+  // Go to the project page
+  await page.goto('https://mrjohn5on.github.io/project1.html');
+
+  // Click on the image to open the enlarged photo
+  const [newTab] = await Promise.all([
+    context.waitForEvent('page'), // Wait for a new tab to open
+    page.locator('img[alt="Bug Report in JIRA"]').nth(1).click(), // Click the 2nd bug report image
+  ]);
+
+  // Wait for the new tab to load and check its URL
+  await newTab.waitForLoadState();
+  await expect(newTab).toHaveURL('https://mrjohn5on.github.io/assets/images/p5.png');
+
+  // Close the new tab
+  await newTab.close();
+});
+
+test('Results photo should enlarge into new tab upon click', async ({ page, context }) => {
+  // Go to the project page
+  await page.goto('https://mrjohn5on.github.io/project1.html');
+
+  // Click on the image to open the enlarged photo
+  const [newTab] = await Promise.all([
+    context.waitForEvent('page'), // Wait for a new tab to open
+    page.locator('img[alt="Results"]').click(), // Click the image
+  ]);
+
+  // Wait for the new tab to load and check its URL
+  await newTab.waitForLoadState();
+  await expect(newTab).toHaveURL('https://mrjohn5on.github.io/assets/images/p6.png');
+
+  // Close the new tab
+  await newTab.close();
+});
+
+});
