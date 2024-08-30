@@ -390,4 +390,21 @@ test('Results photo should enlarge into new tab upon click', async ({ page, cont
   await newTab.close();
 });
 
+test('nav bar hover on home changes color', async ({ page }) => {
+
+  await page.goto('https://mrjohn5on.github.io/');
+
+ 
+  const element = page.locator('#myNavMenu > ul > li:nth-child(1) > a');
+
+  
+  await element.hover();
+
+  
+  const colorAfterHover = await element.evaluate(el => getComputedStyle(el).color);
+
+
+  expect(colorAfterHover).toBe('rgb(21, 21, 21)');
+});
+
 });
