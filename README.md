@@ -8,6 +8,7 @@ This repository contains a suite of Playwright tests designed to validate variou
 - Validate resume and cover letter PDF downloads
 - Check social links functionality
 - Ensure project links navigate to the correct pages
+- Checks color changes on elements upon hovering
 
 ## Prerequisites
 

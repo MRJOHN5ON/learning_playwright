@@ -389,22 +389,37 @@ test('Results photo should enlarge into new tab upon click', async ({ page, cont
   // Close the new tab
   await newTab.close();
 });
+test.describe('Hover Color Changes', () => {
 
-test('nav bar hover on home changes color', async ({ page }) => {
+test('nav bar titles change color on hover', async ({ page }) => {
+  const defaultColor = 'rgb(255, 4, 4)';
+  const hoverColor = 'rgb(0, 0, 0)';
 
-  await page.goto('https://mrjohn5on.github.io/');
+  await page.goto('https://mrjohn5on.github.io/')
 
- 
-  const element = page.locator('#myNavMenu > ul > li:nth-child(1) > a');
+  const homeEL = page.locator('#myNavMenu').getByRole('link', { name: 'Home' });
+  const aboutEl = page.locator('#myNavMenu').getByRole('link',{ name: 'About' });
+  const projectsEl = page.locator('#myNavMenu').getByRole('link',{ name: 'Projects' });
+  const contactEl = page.locator('#myNavMenu').getByRole('link',{ name: 'Contact' });
 
-  
-  await element.hover();
+  await expect(homeEL).toHaveCSS('color', defaultColor);
+  await expect(aboutEl).toHaveCSS('color', defaultColor);
+  await expect(projectsEl).toHaveCSS('color', defaultColor);
+  await expect(contactEl).toHaveCSS('color', defaultColor);
 
-  
-  const colorAfterHover = await element.evaluate(el => getComputedStyle(el).color);
+  await homeEL.hover();
+  await expect(homeEL).toHaveCSS('color', hoverColor);
 
+  await aboutEl.hover();
+  await expect(aboutEl).toHaveCSS('color', hoverColor);
 
-  expect(colorAfterHover).toBe('rgb(21, 21, 21)');
+  await projectsEl.hover();
+  await expect(projectsEl).toHaveCSS('color', hoverColor);
+
+  await contactEl.hover();
+  await expect(contactEl).toHaveCSS('color', hoverColor);
+});
+
 });
 
 });
