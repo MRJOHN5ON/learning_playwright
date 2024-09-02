@@ -30,6 +30,7 @@ export const selectors = {
     jiraBugImage: 'img[alt="Bug Report in JIRA"]',
     image3: 'img[alt="Non-existent Product IDs"]',
     resultsImage: 'img[alt="Results"]',
+    backToHome: 'role=link[name="Go Back To Home Page"]',
 
     //home page images
     profilePic1: 'img[alt="avatar"]',
@@ -67,7 +68,8 @@ export const urls ={
     jira1: 'https://mrjohn5on.github.io/assets/images/p3.png',
     jira2: 'https://mrjohn5on.github.io/assets/images/p5.png',
     ThirdImage: 'https://mrjohn5on.github.io/assets/images/p4.png',
-    results: 'https://mrjohn5on.github.io/assets/images/p6.png'
+    results: 'https://mrjohn5on.github.io/assets/images/p6.png',
+    BacktoHomeLink: 'https://mrjohn5on.github.io/index.html',
     
    
 

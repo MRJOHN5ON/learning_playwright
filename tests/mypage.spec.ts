@@ -421,6 +421,16 @@ test('nav bar titles change color on hover', async ({ page }) => {
   await expect(contactEl).toHaveCSS('color', hoverColor);
 });
 
+test('Footer Back to Home Link Should Redirect Back To Homepage', async ({ page }) => {
+  await page.goto(urls.projectOne);
+  await page.locator(selectors.backToHome).click();
+  await expect(page).toHaveURL(urls.BacktoHomeLink);
+
+
+
 });
+
+});
+
 
 });
