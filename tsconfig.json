@@ -6,8 +6,10 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["playwright"]
+    "types": ["playwright"],
+    "allowImportingTsExtensions": true,
+    "noEmit": true
   },
-  "include": ["tests/**/*.ts"],
+  "include": ["tests/**/*.ts", "POM/**/*.ts"],
   "exclude": ["node_modules"]
 }
