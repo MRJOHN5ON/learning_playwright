@@ -432,5 +432,22 @@ test('Footer Back to Home Link Should Redirect Back To Homepage', async ({ page 
 
 });
 
+test('fill out form, click send, and handle alert', async ({ page }) => {
+  // Navigate to the page with the contact form
+  await page.goto(urls.BASEURL);
+
+ 
+  await page.locator(selectors.nameField).fill('George');
+  await page.locator(selectors.emailField).fill('test123@gmail.com');
+  await page.locator(selectors.messageField).fill('hello this is a test from playwright');
+
+
+  await page.locator(selectors.sendButton).click();
+
+  // Wait for and handle the alert dialog
+  const dialog = await page.waitForEvent('dialog');
+  expect(dialog.message()).toBe('Email sent successfully!');
+  await dialog.accept();
+});
 
 });

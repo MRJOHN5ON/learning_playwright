@@ -9,6 +9,7 @@ This repository contains a suite of Playwright tests designed to validate variou
 - Check social links functionality
 - Ensure project links navigate to the correct pages
 - Checks color changes on elements upon hovering
+- Fills out contact form fields and validates alert message
 
 ## Prerequisites
 

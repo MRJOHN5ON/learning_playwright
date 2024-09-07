@@ -35,6 +35,12 @@ export const selectors = {
     //home page images
     profilePic1: 'img[alt="avatar"]',
     profilePic2: 'img[alt="My Photo"]',
+
+     // Form field placeholders
+     nameField: 'input[placeholder="Name"]',
+     emailField: 'input[placeholder="Email"]',
+     messageField: 'textarea[placeholder="message"]',
+     sendButton: '//*[@id="contact-form"]/div[3]/button',
     
 
 
