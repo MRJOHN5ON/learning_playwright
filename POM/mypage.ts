@@ -1,5 +1,5 @@
 
-
+import { Page, Locator, FrameLocator } from '@playwright/test';
 export const selectors = {
 
     //nav menu items
@@ -31,6 +31,12 @@ export const selectors = {
     image3: 'img[alt="Non-existent Product IDs"]',
     resultsImage: 'img[alt="Results"]',
     backToHome: 'role=link[name="Go Back To Home Page"]',
+
+    //project 2 page
+    youtubeVideo: '/html/body/main/div[1]/iframe',
+    dropdownBt: '.accordion',
+    openedDropdown: '.accordion-header.active',
+    dropDownPic1: 'img[alt="Mind Map 1"]',
 
     //home page images
     profilePic1: 'img[alt="avatar"]',
@@ -83,3 +89,27 @@ export const urls ={
 
 
 };
+
+export class MyPage {
+    readonly page: Page;
+    readonly iframe: FrameLocator;
+    readonly demoLink: Locator;
+
+    constructor(page: Page) {
+        this.page = page;
+        // Define the iframe locator using the title attribute
+        this.iframe = page.frameLocator('iframe[title="YouTube video player"]');
+        // Define the locator for the link within the iframe
+        this.demoLink = this.iframe.locator('a', { hasText: 'Urban Lunch App Demonstration' });
+    }
+
+    // Method to click the demo link
+    async clickDemoLink() {
+        await this.demoLink.click();
+    }
+
+    // Method to get the text of the demo link
+    async getDemoLinkText() {
+        return await this.demoLink.textContent();
+    }
+}
