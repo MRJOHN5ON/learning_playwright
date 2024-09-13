@@ -37,6 +37,12 @@ export const selectors = {
     dropdownBt: '.accordion',
     openedDropdown: '.accordion-header.active',
     dropDownPic1: 'img[alt="Mind Map 1"]',
+    dropDownPic2:'img[alt="Mind Map 2"]',
+    dropDownPic3:'img[alt="Mind Map 3"]',
+    dropDownPic4:'img[alt="Mind Map 4"]',
+    dropDownPic5:'img[alt="Mind Map 5"]',
+    failedText: '.status-failed',
+
 
     //home page images
     profilePic1: 'img[alt="avatar"]',
