@@ -21,7 +21,37 @@ test('should have Requirement Analysis as a header', async ({page}) => {
     await expect(header).toHaveText('Requirement Analysis');
 });
 
+test('should have Equivalency Partitions & Boundary Values as a header', async ({page}) => {
+    await page.goto(urls.projectThree);
+    const header = page.getByRole('heading', { name: 'Equivalency Partitions & Boundary Values'});
 
+    await expect(header).toHaveText('Equivalency Partitions & Boundary Values');
 
+    
+});
+
+test('should have Test Creation & Execution as a header', async ({page}) => {
+    await page.goto(urls.projectThree);
+    const header = page.getByRole('heading',{name: 'Test Creation & Execution'});
+    await expect(header).toHaveText('Test Creation & Execution');
+
+    
+});
+
+test('should have Test Results Stats as a header', async ({page}) => {
+    await page.goto(urls.projectThree);
+    const header = page.getByRole('heading',{name: 'Test Results Stats'});
+    await expect(header).toHaveText('Test Results Stats');
+
+    
+});
+test('Footer Back to Home Link Should Redirect Back To Homepage', async ({ page }) => {
+    await page.goto(urls.projectThree);
+    await page.locator(selectors.backToHome).click();
+    await expect(page).toHaveURL(urls.BacktoHomeLink);
+  
+  
+  
+  });
 
 });

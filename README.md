@@ -10,6 +10,9 @@ This repository contains a suite of Playwright tests designed to validate variou
 - Ensure project links navigate to the correct pages
 - Checks color changes on elements upon hovering
 - Fills out contact form fields and validates alert message
+- Gets computed style (color) of specific text and verifies it
+- Finds and interacts with iFrame (embedded youtube video)
+- Locates headers and confirms text 
 
 ## Prerequisites
 
