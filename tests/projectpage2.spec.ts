@@ -60,6 +60,15 @@ test('should verify text color for all text in the table data labeled failed', a
     
 });
 
+test('Footer Back to Home Link Should Redirect Back To Homepage', async ({ page }) => {
+    await page.goto(urls.projectTwo);
+    await page.locator(selectors.backToHome).click();
+    await expect(page).toHaveURL(urls.BacktoHomeLink);
+  
+  
+  
+  });
+  
 
 
 
