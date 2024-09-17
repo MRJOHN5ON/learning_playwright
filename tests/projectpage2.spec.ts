@@ -3,7 +3,7 @@ import { selectors, urls, MyPage } from "../POM/mypage";
 
 
 
-test.describe('Product 2 Page Functions', () => {
+test.describe('Project 2 Page Functions', () => {
 
     // Test case for verifying the page title
 test('has header title', async ({ page }) => {

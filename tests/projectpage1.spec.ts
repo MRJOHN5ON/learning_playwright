@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { selectors, urls } from "../POM/mypage";
 
-test.describe('Product One Page Functions', () => {
+test.describe('Project One Page Functions', () => {
 
     //Test Case for Header Github button link functionality
   test('Github link on header should lead to github repo', async ({ page, context }) => {

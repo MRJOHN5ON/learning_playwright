@@ -12,6 +12,7 @@
   "devDependencies": {
     "@playwright/test": "^1.46.1",
     "@types/node": "^22.5.0",
+    "playwright-html-reporter": "^0.1.11",
     "typescript": "^5.5.4"
   }
 }

@@ -43,6 +43,12 @@ export const selectors = {
     dropDownPic5:'img[alt="Mind Map 5"]',
     failedText: '.status-failed',
 
+    // project 4 page
+    summerAppBt: 'a[href="https://summeradventure.netlify.app/"]',
+    jasmineBt: 'a[href="https://www.linkedin.com/in/jasmine-dardy/"]',
+    noahBt: 'a[href="https://www.linkedin.com/in/noah-arbaugh/"]',
+    
+
 
     //home page images
     profilePic1: 'img[alt="avatar"]',
@@ -88,6 +94,11 @@ export const urls ={
     ThirdImage: 'https://mrjohn5on.github.io/assets/images/p4.png',
     results: 'https://mrjohn5on.github.io/assets/images/p6.png',
     BacktoHomeLink: 'https://mrjohn5on.github.io/index.html',
+
+    //Project 4 page links 
+    summerApp: 'https://summeradventure.netlify.app/',
+    noahLinkedIn: 'https://www.linkedin.com/in/noah-arbaugh/',
+    jasmineLinkedIn: 'https://www.linkedin.com/in/jasmine-dardy/',
     
    
 
