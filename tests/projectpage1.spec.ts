@@ -3,9 +3,12 @@ import { selectors, urls } from "../POM/mypage";
 
 test.describe('Project One Page Functions', () => {
 
+  test.beforeEach(async ({ page }) => {
+    await page.goto(urls.projectOne);
+  });
     //Test Case for Header Github button link functionality
   test('Github link on header should lead to github repo', async ({ page, context }) => {
-    await page.goto(urls.projectOne);
+    
     const githubButton1 = page.locator(selectors.gitHubRepoBt).first();
   
   
@@ -28,7 +31,7 @@ test.describe('Project One Page Functions', () => {
   
   //Test Case for Footer Github button link functionality
   test('Github link on footer should lead to github repo', async ({ page, context }) => {
-    await page.goto(urls.projectOne);
+    
     const githubButton1 = page.locator(selectors.gitHubRepoBt).last();
   
   
@@ -51,7 +54,7 @@ test.describe('Project One Page Functions', () => {
   
   test('Adding products to kit photo should enlarge into new tab upon click', async ({ page, context }) => {
     // Go to the project page
-    await page.goto(urls.projectOne);
+    
   
     // Click on the image to open the enlarged photo
     const [newTab] = await Promise.all([
@@ -68,8 +71,8 @@ test.describe('Project One Page Functions', () => {
   });
   
   test('Exceeding 30 items photo should enlarge into new tab upon click', async ({ page, context }) => {
-    // Go to the project page
-    await page.goto(urls.projectOne);
+    
+    
   
     // Click on the image to open the enlarged photo
     const [newTab] = await Promise.all([
@@ -86,8 +89,8 @@ test.describe('Project One Page Functions', () => {
   });
   
   test('Bug report 1 photo should enlarge into new tab upon click', async ({ page, context }) => {
-    // Go to the project page
-    await page.goto(urls.projectOne);
+    
+    
   
     // Click on the specific image (e.g., the first one)
     const [newTab] = await Promise.all([
@@ -105,8 +108,7 @@ test.describe('Project One Page Functions', () => {
   
   
   test('Non-existent Product IDs photo should enlarge into new tab upon click', async ({ page, context }) => {
-    // Go to the project page
-    await page.goto(urls.projectOne);
+    
   
     // Click on the image to open the enlarged photo
     const [newTab] = await Promise.all([
@@ -123,8 +125,7 @@ test.describe('Project One Page Functions', () => {
   });
   
   test('Bug report 2 photo should enlarge into new tab upon click', async ({ page, context }) => {
-    // Go to the project page
-    await page.goto(urls.projectOne);
+   
   
     // Click on the image to open the enlarged photo
     const [newTab] = await Promise.all([
@@ -141,8 +142,7 @@ test.describe('Project One Page Functions', () => {
   });
   
   test('Results photo should enlarge into new tab upon click', async ({ page, context }) => {
-    // Go to the project page
-    await page.goto(urls.projectOne);
+    
   
     // Click on the image to open the enlarged photo
     const [newTab] = await Promise.all([
@@ -158,7 +158,7 @@ test.describe('Project One Page Functions', () => {
     await newTab.close();
   });
   test('Footer Back to Home Link Should Redirect Back To Homepage', async ({ page }) => {
-    await page.goto(urls.projectOne);
+    
     await page.locator(selectors.backToHome).click();
     await expect(page).toHaveURL(urls.BacktoHomeLink);
   
