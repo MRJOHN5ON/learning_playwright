@@ -2,17 +2,18 @@ import { test, expect } from '@playwright/test';
 import { selectors, urls } from "../POM/mypage";
 
 test.describe('Project 4 Functionalities', () => {
+    test.beforeEach(async ({ page }) => {
+        await page.goto(urls.projectFive);
+    });
     
-
 test('Title header should exist and contain Bug Jam Experience', async ({page}) => {
-    await page.goto(urls.projectFive);
+    
     const header = page.locator('h1.title');
    
     await expect(header).toHaveText('Bug Jam Experience');
 });
 
 test('Summer Adventure link should exist and open in a new tab', async ({page, context}) => {
-    await page.goto(urls.projectFive);
     const summerAppText = page.locator(selectors.summerAppBt);
     await expect(summerAppText).toBeVisible();
     await expect(summerAppText).toHaveText('Summer Adventure');
@@ -29,13 +30,10 @@ test('Summer Adventure link should exist and open in a new tab', async ({page, c
 
     // Close the new tab
     await newPage.close();
-
 });
-test('Teammate links should exist and open in a new tab', async ({ page, context }) => {
+test('Teammate links should exist and open in a new tab', async ({ page }) => {
     
     //Teammate 1
-    await page.goto(urls.projectFive);
-
     const jasmineText = page.locator(selectors.jasmineBt);
     await expect(jasmineText).toBeVisible();
     await expect(jasmineText).toHaveText('Jasmine Dardy');
@@ -68,20 +66,11 @@ test('Teammate links should exist and open in a new tab', async ({ page, context
     }
     const noahURL = page.url();
     expect(noahURL).toContain('linkedin.com');
-
-
 });
 
 
 test('Footer Back to Home Link Should Redirect Back To Homepage', async ({ page }) => {
-    await page.goto(urls.projectThree);
     await page.locator(selectors.backToHome).click();
     await expect(page).toHaveURL(urls.BacktoHomeLink);
-  
-  
-  
   });
-
-
-
 });
