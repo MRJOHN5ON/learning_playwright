@@ -36,4 +36,46 @@ test('menu button links should work', async ({ page }) => {
     await expect(page).toHaveURL(urls.apiTestingMenuBt);
 
 });
+    test('should have a fully functional footer', async ({ page }) => {
+    await expect(page.locator('footer')).toBeVisible();
+    await expect(page.getByText(/.*Ryley.*Johnson/)).toBeVisible();
+    await expect(page.getByText('ryleyjohnsonemail@gmail.com')).toBeVisible();
+    await expect(page.getByText('ryleyjohnsonemail@gmail.com')).toHaveAttribute('href', 'mailto:ryleyjohnsonemail@gmail.com');
+});
+});
+test.describe('Urban Scooter Page Elements', () => {
+    test.beforeEach(async ({ page }) => {
+        await page.goto(urls.urbanScooter);
+    });
+test('should have photos', async ({ page }) => {
+    await expect(page.locator(selectors.urbanScooterPic)).toBeVisible();
+    await expect(page.locator(selectors.placeOrderpic)).toBeVisible();
+    await expect(page.locator(selectors.requiermentsPic)).toBeVisible();
+    await expect(page.locator(selectors.typeErrorPic)).toBeVisible();
+    await expect(page.locator(selectors.JiraBugReport1)).toBeVisible();
+    await expect(page.locator(selectors.loginAndroidPic)).toBeVisible();
+    await expect(page.locator(selectors.notificationsAndroidPic)).toBeVisible();
+    await expect(page.locator(selectors.androidAlertPic)).toBeVisible();
+    await expect(page.locator(selectors.noInternetPic)).toBeVisible();
+    await expect(page.locator(selectors.JiraBugReport2)).toBeVisible();
+    await expect(page.locator(selectors.JiraBugReport3)).toBeVisible();
+
+    
+});
+test('should have icons', async ({ page }) => {
+    await expect(page.locator(selectors.webIcon)).toBeVisible();
+    await expect(page.locator(selectors.mobileIcon)).toBeVisible();
+    await expect(page.locator(selectors.databaseIcon)).toBeVisible();
+    await expect(page.locator(selectors.checkMarkIcon)).toBeVisible();
+    await expect(page.locator(selectors.softwareEngineerIconFirst)).toBeVisible();
+    await expect(page.locator(selectors.softwareEngineerIconSecond)).toBeVisible();
+    await expect(page.locator(selectors.softwareEngineerIconThird)).toBeVisible();
+    await expect(page.locator(selectors.bugIconFirst)).toBeVisible();
+    await expect(page.locator(selectors.bugIconSecond)).toBeVisible();
+    await expect(page.locator(selectors.bugIconThird)).toBeVisible();
+    await expect(page.locator(selectors.ApiIcon)).toBeVisible();
+    await expect(page.locator(selectors.postmanIcon)).toBeVisible();
+    await expect(page.locator(selectors.JiraIcon)).toBeVisible
+});
+
 });

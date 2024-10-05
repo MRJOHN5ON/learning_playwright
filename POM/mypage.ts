@@ -59,6 +59,42 @@ export const selectors = {
      emailField: 'input[placeholder="Email"]',
      messageField: 'textarea[placeholder="message"]',
      sendButton: '//*[@id="contact-form"]/div[3]/button',
+
+     //urban scooter page images
+     urbanScooterPic: 'img[alt="urbanscooter"]',
+     placeOrderpic:'img[alt="Place Order Screen"]',
+     requiermentsPic: 'img[alt="Field Restrictions"]',
+     typeErrorPic: 'img[alt="Unexpected Application Error"]',
+     JiraBugReport1: 'img[alt="Jira Bug Report - Input Field Vulnerability"]',
+     loginAndroidPic: 'img[alt="Login page andriod"]',
+     notificationsAndroidPic: 'img[alt="Notifications Feature"]',
+     androidAlertPic: 'img[alt="Notifications alert"]',
+     noInternetPic: 'img[alt="No Internet Connection Pop-Up"]',
+     JiraBugReport2: 'img[alt="Notification Tests Results"]',
+     JiraBugReport3: 'img[alt="Internet Connection Tests Results"]',
+
+     //urban scooter page icons
+     webIcon: '.uil.uil-browser.overview-icon',
+     mobileIcon: '.uil uil-android-alt overview-icon',
+     databaseIcon: '.uil uil-database overview-icon',
+     checkMarkIcon: '.uil uil-check methodologies-icon',
+     softwareEngineerIconFirst: '#softwareengineer:first-of-type',
+     softwareEngineerIconSecond: '#softwareengineer:nth-child(2)',
+     softwareEngineerIconThird: '#softwareengineer:nth-child(3)',
+     bugIconFirst: '#BugSearch:first-of-type',
+     bugIconSecond: '#BugSearch:nth-child(2)',
+     bugIconThird: '#BugSearch:nth-child(3)',
+     ApiIcon: '#Api',
+     postmanIcon: '#Postman',
+     JiraIcon: '#Jira',
+     googleSheetsIcon: '#Google',
+     chromeDevToolsIcon: '#Chrome',
+     androidStudioIcon: '#Android',
+     figmaIcon: '#Figma',
+     terminalIcon: '#Terminal',
+     swaggerIcon: '#apimobileprogram',
+
+
     
 
 
