@@ -84,6 +84,7 @@ export const urls ={
     projectThree: 'https://mrjohn5on.github.io/project3.html',
     projectFour: 'https://github.com/MRJOHN5ON/Swaglabs-Username-Acceptance-Test',
     projectFive: 'https://mrjohn5on.github.io/project4.html',
+    urbanScooter:'https://mrjohn5on.github.io/urbanscooters.html',
 
     //Project one page links
     projectOneRepo: 'https://github.com/MRJOHN5ON/postmanAPI_testing',
@@ -99,6 +100,16 @@ export const urls ={
     summerApp: 'https://summeradventure.netlify.app/',
     noahLinkedIn: 'https://www.linkedin.com/in/noah-arbaugh/',
     jasmineLinkedIn: 'https://www.linkedin.com/in/jasmine-dardy/',
+
+    //urban scooter page links
+    overviewMenuBt:'https://mrjohn5on.github.io/urbanscooters.html#overview',
+    testingScopeMenuBt:'https://mrjohn5on.github.io/urbanscooters.html#testing-scope',
+    methodologyMenuBt:'https://mrjohn5on.github.io/urbanscooters.html#methodologies',
+    toolsMenuBt:'https://mrjohn5on.github.io/urbanscooters.html#tools',
+    webTestingMenuBt:'https://mrjohn5on.github.io/urbanscooters.html#web-testing',
+    mobileTestingMenuBt:'https://mrjohn5on.github.io/urbanscooters.html#mobile-testing',
+    apiTestingMenuBt:'https://mrjohn5on.github.io/urbanscooters.html#api-testing',
+    
     
    
 
