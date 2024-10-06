@@ -75,15 +75,11 @@ export const selectors = {
 
      //urban scooter page icons
      webIcon: '.uil.uil-browser.overview-icon',
-     mobileIcon: '.uil uil-android-alt overview-icon',
-     databaseIcon: '.uil uil-database overview-icon',
-     checkMarkIcon: '.uil uil-check methodologies-icon',
-     softwareEngineerIconFirst: '#softwareengineer:first-of-type',
-     softwareEngineerIconSecond: '#softwareengineer:nth-child(2)',
-     softwareEngineerIconThird: '#softwareengineer:nth-child(3)',
-     bugIconFirst: '#BugSearch:first-of-type',
-     bugIconSecond: '#BugSearch:nth-child(2)',
-     bugIconThird: '#BugSearch:nth-child(3)',
+     mobileIcon: '.uil.uil-android-alt.overview-icon',
+     databaseIcon: '.uil.uil-database.overview-icon',
+     checkMarkIcon: '.uil.uil-check.methodologies-icon',
+     softwareEngineerIcon: '#softwareengineer',
+     bugIcon: '#BugSearch',
      ApiIcon: '#Api',
      postmanIcon: '#Postman',
      JiraIcon: '#Jira',
@@ -93,6 +89,7 @@ export const selectors = {
      figmaIcon: '#Figma',
      terminalIcon: '#Terminal',
      swaggerIcon: '#apimobileprogram',
+    
 
 
     

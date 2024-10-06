@@ -1,5 +1,11 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, Locator } from '@playwright/test';
 import { selectors, urls } from "../POM/mypage";
+
+async function checkIcons(locator: Locator, count: number): Promise<void> {
+    for (let i = 0; i < count; i++) {
+        await expect(locator.nth(i)).toBeVisible();
+    }
+}
 test.describe('Urban Scooter Page Functionalities', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto(urls.urbanScooter);
@@ -63,19 +69,77 @@ test('should have photos', async ({ page }) => {
     
 });
 test('should have icons', async ({ page }) => {
-    await expect(page.locator(selectors.webIcon)).toBeVisible();
-    await expect(page.locator(selectors.mobileIcon)).toBeVisible();
-    await expect(page.locator(selectors.databaseIcon)).toBeVisible();
-    await expect(page.locator(selectors.checkMarkIcon)).toBeVisible();
-    await expect(page.locator(selectors.softwareEngineerIconFirst)).toBeVisible();
-    await expect(page.locator(selectors.softwareEngineerIconSecond)).toBeVisible();
-    await expect(page.locator(selectors.softwareEngineerIconThird)).toBeVisible();
-    await expect(page.locator(selectors.bugIconFirst)).toBeVisible();
-    await expect(page.locator(selectors.bugIconSecond)).toBeVisible();
-    await expect(page.locator(selectors.bugIconThird)).toBeVisible();
+    // checks for 3 web icons
+    await expect(page.locator(selectors.webIcon).nth(0)).toBeVisible();
+    await expect(page.locator(selectors.webIcon).nth(1)).toBeVisible();
+    await expect(page.locator(selectors.webIcon).nth(2)).toBeVisible();
+    
+    // checks for 3 mobile icons
+    await expect(page.locator(selectors.mobileIcon).nth(0)).toBeVisible();
+    await expect(page.locator(selectors.mobileIcon).nth(1)).toBeVisible();
+    await expect(page.locator(selectors.mobileIcon).nth(2)).toBeVisible();
+
+    // checks for 3 database icons
+    await expect(page.locator(selectors.databaseIcon).nth(0)).toBeVisible();
+    await expect(page.locator(selectors.databaseIcon).nth(1)).toBeVisible();
+    await expect(page.locator(selectors.databaseIcon).nth(2)).toBeVisible();
+
+    // checks for 4 check mark icons
+    await expect(page.locator(selectors.checkMarkIcon).nth(0)).toBeVisible();
+    await expect(page.locator(selectors.checkMarkIcon).nth(1)).toBeVisible();
+    await expect(page.locator(selectors.checkMarkIcon).nth(2)).toBeVisible();
+    await expect(page.locator(selectors.checkMarkIcon).nth(3)).toBeVisible();
+
+    // checks for 3 software engineer icons
+    await expect(page.locator(selectors.softwareEngineerIcon).nth(0)).toBeVisible();
+    await expect(page.locator(selectors.softwareEngineerIcon).nth(1)).toBeVisible();
+    await expect(page.locator(selectors.softwareEngineerIcon).nth(2)).toBeVisible();
+   
+    // checks for 3 bug icons
+    await expect(page.locator(selectors.bugIcon).nth(0)).toBeVisible();
+    await expect(page.locator(selectors.bugIcon).nth(1)).toBeVisible();
+    await expect(page.locator(selectors.bugIcon).nth(2)).toBeVisible();
+});
+   // brand icons
+   test('should have brand icons', async ({ page }) => {
     await expect(page.locator(selectors.ApiIcon)).toBeVisible();
     await expect(page.locator(selectors.postmanIcon)).toBeVisible();
     await expect(page.locator(selectors.JiraIcon)).toBeVisible
+    await expect(page.locator(selectors.googleSheetsIcon)).toBeVisible();
+    await expect(page.locator(selectors.chromeDevToolsIcon)).toBeVisible();
+    await expect(page.locator(selectors.androidStudioIcon)).toBeVisible();
+    await expect(page.locator(selectors.figmaIcon)).toBeVisible();
+    await expect(page.locator(selectors.terminalIcon)).toBeVisible();
+    await expect(page.locator(selectors.swaggerIcon)).toBeVisible();
+    
+});
+test('should have icons alternative method', async ({ page }) => {
+    await checkIcons(page.locator(selectors.webIcon), 3);
+    await checkIcons(page.locator(selectors.mobileIcon), 3);
+    await checkIcons(page.locator(selectors.databaseIcon), 3);
+    await checkIcons(page.locator(selectors.checkMarkIcon), 4);
+    await checkIcons(page.locator(selectors.softwareEngineerIcon), 3);
+    await checkIcons(page.locator(selectors.bugIcon), 3);
+});
+    // Check brand icons separately
+test('should have brand icons alternative method', async ({ page }) => {
+    const brandIcons = [
+        selectors.ApiIcon,
+        selectors.postmanIcon,
+        selectors.JiraIcon,
+        selectors.googleSheetsIcon,
+        selectors.chromeDevToolsIcon,
+        selectors.androidStudioIcon,
+        selectors.figmaIcon,
+        selectors.terminalIcon,
+        selectors.swaggerIcon
+    ];
+    
+    for (const icon of brandIcons) {
+        await expect(page.locator(icon)).toBeVisible();
+    }
 });
 
 });
+
+
