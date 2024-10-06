@@ -89,6 +89,10 @@ export const selectors = {
      figmaIcon: '#Figma',
      terminalIcon: '#Terminal',
      swaggerIcon: '#apimobileprogram',
+
+     //urban scooter page buttons
+     figmaBt: 'a.btn:has-text("  View Figma Layout Specs")',
+     
     
 
 
@@ -142,7 +146,8 @@ export const urls ={
     webTestingMenuBt:'https://mrjohn5on.github.io/urbanscooters.html#web-testing',
     mobileTestingMenuBt:'https://mrjohn5on.github.io/urbanscooters.html#mobile-testing',
     apiTestingMenuBt:'https://mrjohn5on.github.io/urbanscooters.html#api-testing',
-    
+    figmaWebLink: 'https://www.figma.com/design/PiEK0kEfKb94vSqtoCQG1w/Web?node-id=0-1&node-type=canvas',
+    figmaMobileLink:'https://www.figma.com/file/Ql81P6XKXadabhs5Hi6BxP/mobile?node-id=0%3A1&t=EFnpFwwT1DRQlhIy-1',  
     
    
 

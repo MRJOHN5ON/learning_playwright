@@ -25,7 +25,7 @@ test('should have menu buttons', async ({ page }) => {
     await expect(page.getByRole('link', { name: 'Mobile Testing' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'API Testing' })).toBeVisible();
 });
-test('menu button links should work', async ({ page }) => {
+test('menu button links should redirect to correct areas of the page', async ({ page }) => {
     await page.getByRole('link', { name: 'Overview' }).click();
     await expect(page).toHaveURL(urls.overviewMenuBt);
     await page.getByRole('link', { name: 'Testing Scope' }).click();
@@ -42,7 +42,25 @@ test('menu button links should work', async ({ page }) => {
     await expect(page).toHaveURL(urls.apiTestingMenuBt);
 
 });
-    test('should have a fully functional footer', async ({ page }) => {
+test('figma buttons should be visible and contain valid links', async ({ page }) => {
+    // Check if both buttons are visible
+    await expect(page.locator(selectors.figmaBt).nth(0)).toBeVisible();
+    await expect(page.locator(selectors.figmaBt).nth(1)).toBeVisible();
+    // Check if both buttons have valid links
+    await expect(page.locator(selectors.figmaBt).nth(0)).toHaveAttribute('href', urls.figmaWebLink);
+    await expect(page.locator(selectors.figmaBt).nth(1)).toHaveAttribute('href', urls.figmaMobileLink);
+    // click on the first button and check if it redirects to the correct link
+    await page.locator(selectors.figmaBt).nth(0).click();
+    await expect(page).toHaveURL(urls.figmaWebLink);
+    await page.goBack();
+    // Click on the second button and check if it redirects to the correct link
+    await page.locator(selectors.figmaBt).nth(1).click();
+    await expect(page).toHaveURL(urls.figmaMobileLink);
+
+
+    
+});
+test('should have a fully functional footer', async ({ page }) => {
     await expect(page.locator('footer')).toBeVisible();
     await expect(page.getByText(/.*Ryley.*Johnson/)).toBeVisible();
     await expect(page.getByText('ryleyjohnsonemail@gmail.com')).toBeVisible();
