@@ -92,6 +92,8 @@ export const selectors = {
 
      //urban scooter page buttons
      figmaBt: 'a.btn:has-text("  View Figma Layout Specs")',
+     backToHomeLink: 'a[href="index.html"]',
+     projectBankLink: 'a[href="https://mrjohn5on.github.io/#projects"]',
      
     
 
@@ -110,6 +112,7 @@ export const urls ={
 
     //Home page links
     BASEURL: 'https://mrjohn5on.github.io/',
+    indexUrl: 'https://mrjohn5on.github.io/index.html',
     topHomeUrl: 'https://mrjohn5on.github.io/#home',
     topAboutUrl: 'https://mrjohn5on.github.io/#about',
     topProjectsUrl: 'https://mrjohn5on.github.io/#projects',
@@ -122,6 +125,7 @@ export const urls ={
     projectFour: 'https://github.com/MRJOHN5ON/Swaglabs-Username-Acceptance-Test',
     projectFive: 'https://mrjohn5on.github.io/project4.html',
     urbanScooter:'https://mrjohn5on.github.io/urbanscooters.html',
+    
 
     //Project one page links
     projectOneRepo: 'https://github.com/MRJOHN5ON/postmanAPI_testing',
@@ -131,7 +135,7 @@ export const urls ={
     jira2: 'https://mrjohn5on.github.io/assets/images/p5.png',
     ThirdImage: 'https://mrjohn5on.github.io/assets/images/p4.png',
     results: 'https://mrjohn5on.github.io/assets/images/p6.png',
-    BacktoHomeLink: 'https://mrjohn5on.github.io/index.html',
+    //BacktoHomeLink: 'https://mrjohn5on.github.io/index.html',
 
     //Project 4 page links 
     summerApp: 'https://summeradventure.netlify.app/',

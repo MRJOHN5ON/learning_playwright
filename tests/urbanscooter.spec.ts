@@ -65,9 +65,16 @@ test('should have a fully functional footer', async ({ page }) => {
     await expect(page.getByText(/.*Ryley.*Johnson/)).toBeVisible();
     await expect(page.getByText('ryleyjohnsonemail@gmail.com')).toBeVisible();
     await expect(page.getByText('ryleyjohnsonemail@gmail.com')).toHaveAttribute('href', 'mailto:ryleyjohnsonemail@gmail.com');
+    await expect(page.locator(selectors.backToHomeLink)).toBeVisible();
+    await page.locator(selectors.backToHomeLink).click();
+    await expect(page).toHaveURL(urls.indexUrl);
+    await page.goBack();
+    await expect(page.locator(selectors.projectBankLink)).toBeVisible();
+    await page.locator(selectors.projectBankLink).click();
+    await expect(page).toHaveURL(urls.topProjectsUrl);
+    
 });
-});
-test.describe('Urban Scooter Page Elements', () => {
+test.describe('Urban Scooter Page Icons & Photos', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto(urls.urbanScooter);
     });
@@ -160,4 +167,4 @@ test('should have brand icons alternative method', async ({ page }) => {
 
 });
 
-
+});

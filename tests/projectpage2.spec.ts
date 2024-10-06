@@ -60,11 +60,15 @@ test('should verify text color for all text in the table data labeled failed', a
     
 });
 
-test('Footer Back to Home Link Should Redirect Back To Homepage', async ({ page }) => {
-
-    await page.locator(selectors.backToHome).click();
-    await expect(page).toHaveURL(urls.BacktoHomeLink);
-  
-  });
+test('should have a fully home and project bank links', async ({ page }) => {
+    await expect(page.locator(selectors.backToHomeLink)).toBeVisible();
+    await page.locator(selectors.backToHomeLink).click();
+    await expect(page).toHaveURL(urls.indexUrl);
+    await page.goBack();
+    await expect(page.locator(selectors.projectBankLink)).toBeVisible();
+    await page.locator(selectors.projectBankLink).click();
+    await expect(page).toHaveURL(urls.topProjectsUrl);
+    
+});
   
 });

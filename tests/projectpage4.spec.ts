@@ -69,8 +69,18 @@ test('Teammate links should exist and open in a new tab', async ({ page }) => {
 });
 
 
-test('Footer Back to Home Link Should Redirect Back To Homepage', async ({ page }) => {
-    await page.locator(selectors.backToHome).click();
-    await expect(page).toHaveURL(urls.BacktoHomeLink);
-  });
+test('should have a fully functional footer', async ({ page }) => {
+    await expect(page.locator('footer')).toBeVisible();
+    await expect(page.getByText(/.*Ryley.*Johnson/)).toBeVisible();
+    await expect(page.getByText('ryleyjohnsonemail@gmail.com')).toBeVisible();
+    await expect(page.getByText('ryleyjohnsonemail@gmail.com')).toHaveAttribute('href', 'mailto:ryleyjohnsonemail@gmail.com');
+    await expect(page.locator(selectors.backToHomeLink)).toBeVisible();
+    await page.locator(selectors.backToHomeLink).click();
+    await expect(page).toHaveURL(urls.indexUrl);
+    await page.goBack();
+    await expect(page.locator(selectors.projectBankLink)).toBeVisible();
+    await page.locator(selectors.projectBankLink).click();
+    await expect(page).toHaveURL(urls.topProjectsUrl);
+    
+});
 });
