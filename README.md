@@ -11,8 +11,9 @@ This repository contains a suite of Playwright tests designed to validate variou
 - Checks color changes on elements upon hovering
 - Fills out contact form fields and validates alert message
 - Gets computed style (color) of specific text and verifies it
-- Finds and interacts with iFrame (embedded youtube video)
+- Finds and interacts with iFrame (embedded youtube video) (THIS SCRIPT WAS MADE WITH THE HELP OF AN AI ASSISTANT)
 - Locates headers and confirms text 
+- Form submission and validation tests (THIS SCRIPT WAS MADE WITH THE HELP OF AN AI ASSISTANT)
 
 ## Prerequisites
 
