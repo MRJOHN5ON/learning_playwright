@@ -1,6 +1,8 @@
 import { test, expect, Locator } from '@playwright/test';
 import { selectors, urls } from "../POM/mypage";
 
+// Helper function to check if all icons are visible
+// This function was written by an AI assistant
 async function checkIcons(locator: Locator, count: number): Promise<void> {
     for (let i = 0; i < count; i++) {
         await expect(locator.nth(i)).toBeVisible();
@@ -138,6 +140,8 @@ test('should have icons', async ({ page }) => {
     await expect(page.locator(selectors.swaggerIcon)).toBeVisible();
     
 });
+
+// This test was created with the help of an ai assistant
 test('should have icons alternative method', async ({ page }) => {
     await checkIcons(page.locator(selectors.webIcon), 3);
     await checkIcons(page.locator(selectors.mobileIcon), 3);

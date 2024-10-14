@@ -11,7 +11,7 @@ test.describe('Email Form Validation Tests', () => {
         await page.goto(urls.BASEURL); // Navigate to the base URL
     });
 
-    test('should alert when fields are empty', async () => {
+    test('should alert when all fields are empty', async () => {
         page.on('dialog', async dialog => {
             await expect(dialog.message()).toContain("Please fill in all fields before sending the email.");
             await dialog.dismiss(); // Dismiss the alert
