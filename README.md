@@ -1,6 +1,7 @@
 # Playwright Test Suite
 
-This repository contains a suite of Playwright tests designed to validate various functionalities of the [My Portfolio](https://mrjohn5on.github.io/) website.
+This repository contains a suite of Playwright tests designed to validate various functionalities of the [My Portfolio](https://mrjohn5on.github.io/) website. It serves as an ongoing personal project to learn and experiment with Playwright.
+
 ## Features
 
 - Verify page title
@@ -15,9 +16,14 @@ This repository contains a suite of Playwright tests designed to validate variou
 - Locates headers and confirms text 
 - Form submission and validation tests (THIS SCRIPT WAS MADE WITH THE HELP OF AN AI ASSISTANT)
 
+
 ## Prerequisites
 
 Before running the tests, ensure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (version 14 or higher)
 - [Playwright](https://playwright.dev/docs/intro)
+
+## Notes
+- Test files with CURSOR written in the title were made using cursor.sh AI assistant. 
+- This was done as a learning experience, and experimentation to refactor code. 

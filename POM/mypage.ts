@@ -95,15 +95,6 @@ export const selectors = {
      backToHomeLink: 'a[href="index.html"]',
      projectBankLink: 'a[href="https://mrjohn5on.github.io/#projects"]',
      
-    
-
-
-    
-
-
-
-
-
 
 
 };
@@ -135,7 +126,7 @@ export const urls ={
     jira2: 'https://mrjohn5on.github.io/assets/images/p5.png',
     ThirdImage: 'https://mrjohn5on.github.io/assets/images/p4.png',
     results: 'https://mrjohn5on.github.io/assets/images/p6.png',
-    //BacktoHomeLink: 'https://mrjohn5on.github.io/index.html',
+   
 
     //Project 4 page links 
     summerApp: 'https://summeradventure.netlify.app/',
