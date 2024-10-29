@@ -26,4 +26,5 @@ Before running the tests, ensure you have the following installed:
 
 ## Notes
 - Test files with CURSOR written in the title were made using cursor.sh AI assistant. 
-- This was done as a learning experience, and experimentation to refactor code. 
+- This was done as a learning experience, and experimentation to refactor code.
+- The superNovaCodeGen.spec.ts file was made using playwright code gen. Ultimatly I found it to very basic, only able to assert visiblity and simple functions. 

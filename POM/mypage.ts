@@ -1,4 +1,3 @@
-
 import { Page, Locator, FrameLocator } from '@playwright/test';
 export const selectors = {
 
@@ -96,6 +95,7 @@ export const selectors = {
      projectBankLink: 'a[href="https://mrjohn5on.github.io/#projects"]',
      
 
+    internshipCertificate: 'img[alt="Internship Certificate"]',
 
 };
 
@@ -150,6 +150,30 @@ export const urls ={
 
 
 };
+
+export const wordsList = [
+    '3-month internship',
+    'software QA skills',
+    'insurance software',
+    'API',
+    'web/mobile UI testing',
+    'Agile environment',
+    'DrivT',
+    'test cases',
+    'bug reports',
+    'API testing skills',
+    'edge cases',
+    'HTTP validation',
+    'error handling',
+    'automation',
+    'JavaScript',
+    'Axios',
+    'Jest',
+    'Github version control techniques',
+    'QA career',
+    'Supernova MGU',
+    'TripleTen'
+];
 
 export class MyPage {
     readonly page: Page;
