@@ -79,7 +79,16 @@ test.describe('Top Page Social Links Connect onclick', () => {
     await newPage.close();
   }
   test('LinkedIn link works correctly', async ({ page }) => {
-    await testSocialLink(selectors.linkedIn, urls.linkedInPage, page);
+    const button = page.locator(selectors.linkedIn).first();
+    await expect(button).toBeVisible();
+    const [newPage] = await Promise.all([
+      page.context().waitForEvent('page'),
+      button.click(),
+    ]);
+    await newPage.waitForLoadState();
+    //linkedin presents a authwall so we can't check for the exact url
+    await expect(newPage).toHaveURL(/.*linkedin.*/);
+    await newPage.close();
   });
 
   test('Github link works correctly', async ({ page }) => {
@@ -130,8 +139,8 @@ test.describe('Project links', () => {
     { selector: selectors.project1, url: urls.projectOne },
     { selector: selectors.project2, url: urls.projectTwo },
     { selector: selectors.project3, url: urls.projectThree },
-    { selector: selectors.project4, url: urls.projectFour },
-    { selector: selectors.project5, url: urls.projectFive },
+    { selector: selectors.supernova, url: urls.supernova },
+    { selector: selectors.projectBugJam, url: urls.projectBugJam },
   ];
 
   projectTests.forEach(({ selector, url }, index) => {

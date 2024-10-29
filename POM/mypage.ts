@@ -20,8 +20,8 @@ export const selectors = {
     project1: '//*[@id="projects"]/div[2]/div[1]/a/h3',
     project2: '//*[@id="projects"]/div[2]/div[2]/a/h3',
     project3: '#projects > div.project-container > div:nth-child(3) > a > h3',
-    project4: '#projects > div.project-container > div:nth-child(4) > a > h3',
-    project5: '#projects > div.project-container > div:nth-child(5) > a > h3',
+    supernova: '#projects > div.project-container > div:nth-child(4) > a > h3',
+    projectBugJam: '#projects > div.project-container > div:nth-child(5) > a > h3',
 
     //project one page
     gitHubRepoBt: 'a[href="https://github.com/MRJOHN5ON/postmanAPI_testing"]',
@@ -43,7 +43,7 @@ export const selectors = {
     dropDownPic5:'img[alt="Mind Map 5"]',
     failedText: '.status-failed',
 
-    // project 4 page
+    // project bug jam page
     summerAppBt: 'a[href="https://summeradventure.netlify.app/"]',
     jasmineBt: 'a[href="https://www.linkedin.com/in/jasmine-dardy/"]',
     noahBt: 'a[href="https://www.linkedin.com/in/noah-arbaugh/"]',
@@ -113,8 +113,8 @@ export const urls ={
     projectOne: 'https://mrjohn5on.github.io/project1.html',
     projectTwo: 'https://mrjohn5on.github.io/project2.html',
     projectThree: 'https://mrjohn5on.github.io/project3.html',
-    projectFour: 'https://github.com/MRJOHN5ON/Swaglabs-Username-Acceptance-Test',
-    projectFive: 'https://mrjohn5on.github.io/project4.html',
+    supernova: 'https://mrjohn5on.github.io/supernova.html',
+    projectBugJam: 'https://mrjohn5on.github.io/project4.html',
     urbanScooter:'https://mrjohn5on.github.io/urbanscooters.html',
     
 
@@ -128,7 +128,7 @@ export const urls ={
     results: 'https://mrjohn5on.github.io/assets/images/p6.png',
    
 
-    //Project 4 page links 
+    //Project bug jam page links 
     summerApp: 'https://summeradventure.netlify.app/',
     noahLinkedIn: 'https://www.linkedin.com/in/noah-arbaugh/',
     jasmineLinkedIn: 'https://www.linkedin.com/in/jasmine-dardy/',

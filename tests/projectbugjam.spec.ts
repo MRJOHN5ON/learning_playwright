@@ -3,7 +3,7 @@ import { selectors, urls } from "../POM/mypage";
 
 test.describe('Project 4 Functionalities', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto(urls.projectFive);
+        await page.goto(urls.projectBugJam);
     });
     
 test('Title header should exist and contain Bug Jam Experience', async ({page}) => {
@@ -51,7 +51,7 @@ test('Teammate links should exist and open in a new tab', async ({ page }) => {
     expect(jasmineURL).toContain('linkedin.com');
 
     //Teammate 2
-    await page.goto(urls.projectFive);
+    await page.goto(urls.projectBugJam);
     const noahText = page.locator(selectors.noahBt);
     await expect(noahText).toBeVisible();
     await expect(noahText).toHaveText('Noah Arbaugh');

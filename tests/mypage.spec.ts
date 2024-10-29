@@ -218,18 +218,18 @@ test.describe('Project links', () => {
     await expect(page).toHaveURL(urls.projectThree);
   });
 
-  // Test case Project 4
-  test('Load Project 4 Page', async ({ page }) => {
+  // Test case Project Supernova
+  test('Load Supernova Page', async ({ page }) => {
     
-    await page.locator(selectors.project4).click();
-    await expect(page).toHaveURL(urls.projectFour);
+    await page.locator(selectors.supernova).click();
+    await expect(page).toHaveURL(urls.supernova);
   });
 
-  // Test case Project 5
-  test('Load Project 5 Page', async ({ page }) =>{
+  // Test case Project Bug Jam
+  test('Load Project Bug Jam Page', async ({ page }) =>{
     
-    await page.locator(selectors.project5).click();
-    await expect(page).toHaveURL(urls.projectFive);
+    await page.locator(selectors.projectBugJam).click();
+    await expect(page).toHaveURL(urls.projectBugJam);
 
   });
 });
