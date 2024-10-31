@@ -57,7 +57,7 @@ test('resume button downloads PDF', async ({ page }) => {
     page.waitForEvent('download'), 
     page.locator(selectors.resumePDF).click() 
   ]);
-  expect(resumeDownload.suggestedFilename()).toContain('resume');
+  expect(resumeDownload.suggestedFilename().toLowerCase()).toContain('resume');
   });
 
 
@@ -159,7 +159,7 @@ test.describe('Footer Social Links Connect onclick', () => {
   
     // Wait for the new page to load and check that the URL is correct
     await newPage.waitForLoadState();
-    // actual url is https://www.linkedin.com/in/ryley-johnson-67b856192/ but the test is failing because it is not finding the url due to linkedin throwing up an authentication page.
+    // actual url is https://www.linkedin.com/in/ryleyj but the test is failing because it is not finding the url due to linkedin throwing up an authentication page.
     await expect(newPage).toHaveURL(/.*linkedin.*/);
   
    
