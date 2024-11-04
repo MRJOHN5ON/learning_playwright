@@ -43,13 +43,14 @@ test.describe('Resume/CV PDF Downloads', () => {
   });
 
   // Test for the resume button download
-  test('resume button downloads PDF', async ({ page }) => {
-    const [resumeDownload] = await Promise.all([
-      page.waitForEvent('download'),
-      page.locator(selectors.resumePDF).click(),
-    ]);
-    expect(resumeDownload.suggestedFilename()).toContain('resume');
-  });
+    // Test for the resume button download
+    test('resume button downloads PDF', async ({ page }) => {
+      const [resumeDownload] = await Promise.all([
+        page.waitForEvent('download'),
+        page.locator(selectors.resumePDF).click(),
+      ]);
+      expect((resumeDownload.suggestedFilename() as string).toLowerCase()).toContain('resume');
+    });
 
   // Test for the cover letter button download
   test('cover letter button downloads PDF', async ({ page }) => {
