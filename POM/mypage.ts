@@ -2,14 +2,14 @@ import { Page, Locator, FrameLocator } from '@playwright/test';
 export const selectors = {
 
     //nav menu items
-    topHomeButton: '#myNavMenu >> text=Home',
-    topAboutButton: '#myNavMenu >> text=About',
-    topProjectButton: '#myNavMenu >> text=Projects',
-    topContactButton: '#myNavMenu >> text=Contact',
+    topHomeButton: '[data-testid="Nav-menu-home"]',
+    topAboutButton: '[data-testid="Nav-menu-about"]',
+    topProjectButton: '[data-testid="Nav-menu-projects"]',
+    topContactButton: '[data-testid="Nav-menu-contact"]',
 
     //file download buttons
-    resumePDF: 'a.btn.blue-btn:has-text("RESUME")',
-    coverLetterPDF: 'a.btn:has-text("COVER LETTER")',
+    resumePDF: '[data-testid="Download-resume-btn"]',
+    coverLetterPDF: '[data-testid="Download-CV-btn"]',
 
     //social media buttons
     linkedIn:'a[href="https://www.linkedin.com/in/ryleyj"]',
