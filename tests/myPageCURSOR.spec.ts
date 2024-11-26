@@ -42,7 +42,7 @@ test.describe('Resume/CV PDF Downloads', () => {
     await navigateAndExpectURL(page, urls.BASEURL);
   });
 
-  // Test for the resume button download
+
     // Test for the resume button download
     test('resume button downloads PDF', async ({ page }) => {
       const [resumeDownload] = await Promise.all([
@@ -67,6 +67,7 @@ test.describe('Top Page Social Links Connect onclick', () => {
   test.beforeEach(async ({ page }) => {
     await navigateAndExpectURL(page, urls.BASEURL);
   });
+
   // Function to test social links
   async function testSocialLink(selector: string, expectedUrl: string, page: Page) {
     const button = page.locator(selector).first();

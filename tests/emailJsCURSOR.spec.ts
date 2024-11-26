@@ -9,6 +9,27 @@ async function assertDialogMessage(page: Page, expectedMessage: string) {
     });
 }
 
+//Placeholder Visibility Assertion Tests
+test.describe('Email form should have placeholder values', () => {
+    test.beforeEach(async ({ page }) => {
+        await page.goto(urls.BASEURL);
+    });
+
+    const placeholderTests = [
+        { selector: selectors.nameField, expected: "Name" },
+        { selector: selectors.emailField, expected: "Email" },
+        { selector: selectors.messageField, expected: "message" }
+    ];
+
+    for (const { selector, expected } of placeholderTests) {
+        test(`Field should have "${expected}" as placeholder value`, async ({ page }) => {
+            const placeholderValue = await page.locator(selector).getAttribute('placeholder');
+            expect(placeholderValue).toEqual(expected);
+        });
+    }
+});
+
+
 test.describe('Email Form Validation Tests', () => {
     let page: Page; 
 

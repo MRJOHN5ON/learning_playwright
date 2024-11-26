@@ -53,7 +53,7 @@ export const selectors = {
     profilePic1: 'img[alt="avatar"]',
     profilePic2: 'img[alt="My Photo"]',
 
-     // Form field placeholders
+     // Email Form 
      nameField: 'input[placeholder="Name"]',
      emailField: 'input[placeholder="Email"]',
      messageField: 'textarea[placeholder="message"]',

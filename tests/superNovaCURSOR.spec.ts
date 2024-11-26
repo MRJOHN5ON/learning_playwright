@@ -11,6 +11,7 @@ test('should have top header title', async ({ page }) => {
     const header = page.locator('h1');
     await expect(header).toHaveText('Supernova Internship Test Report');
 });
+
 test('should have visible and bold words in the introduction section', async ({ page }) => {
     const introductionLocator = page.locator('#introduction'); // Targeting the introduction section
 
