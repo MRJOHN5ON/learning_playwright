@@ -26,6 +26,13 @@ test.describe('Email form should have placeholder values', () =>{
         expect (messagePlaceholderValue).toEqual("message")
     });
 
+    test('Send button should be labeled "Send " ', async ({page}) =>{
+        const sendBtn = page.locator(selectors.sendButton).filter({hasText: "Send "})
+        const buttonText = await sendBtn.textContent()
+
+        expect(buttonText).toEqual("Send ")
+    })
+
 
 
 
